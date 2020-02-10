@@ -8,22 +8,19 @@ var Get24HourStats = (() => {
     });
 });
 
-var GetOrderbookTotals = (() => {
-    PublicClient.getProductOrderBook('BTC-USD', { level: 2 }).then((data) => {
-        let totalBidsUsd = 0;
-        data.bids.forEach(bid => {
-            totalBidsUsd += (parseFloat(bid[0]) * parseFloat(bid[1]));
-        });
-        console.log(totalBidsUsd);
-
-        let totalAsksUsd = 0;
-        data.asks.forEach(ask => {
-            totalAsksUsd += (parseFloat(ask[0]) * parseFloat(ask[1]));
-        });
-        console.log(totalAsksUsd);
-
-        return { totalAsksUsd: totalAsksUsd, totalBidsUsd: totalBidsUsd };
+var GetOrderbookTotals = (async () => {
+    var data = await PublicClient.getProductOrderBook('BTC-USD', { level: 2 });
+    let totalBidsUsd = 0;
+    data.bids.forEach(bid => {
+        totalBidsUsd += (parseFloat(bid[0]) * parseFloat(bid[1]));
     });
+
+    let totalAsksUsd = 0;
+    data.asks.forEach(ask => {
+        totalAsksUsd += (parseFloat(ask[0]) * parseFloat(ask[1]));
+    });
+
+    return { totalAsksUsd: totalAsksUsd, totalBidsUsd: totalBidsUsd };
 });
 
 
