@@ -1,0 +1,22 @@
+{
+  "name": "bitcoinfiatinflowmonitor",
+  "version": "1.0.0",
+  "description": "Monitors the inflow of fiat to/from Bitcoin, across multiple exchanges.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewGerdel/BitcoinFiatInflowMonitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewGerdel/BitcoinFiatInflowMonitor/issues"
+  },
+  "homepage": "https://github.com/AndrewGerdel/BitcoinFiatInflowMonitor#readme",
+  "dependencies": {
+    "coinbase-pro": "^0.9.0"
+  }
+}
