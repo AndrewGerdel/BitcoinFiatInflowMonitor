@@ -22,7 +22,7 @@ var GetRates = (async () => {
 
     //Display the average. 
     let direction = averageSum > 0 ? 'Buy': 'Sell';
-    console.log(`Average Sum: %s (%s)`, averageSum, direction);
+    console.log(`%s: Average Sum: %s (%s)`, new Date().toLocaleString(), averageSum, direction);
 });
 
 var GetSumAverage = (async () => {
